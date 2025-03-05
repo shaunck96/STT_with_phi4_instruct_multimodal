@@ -55,7 +55,7 @@ prompt_suffix = '<|end|>'
 
 # Part 1: Audio Processing with Diarization
 print("\n--- AUDIO PROCESSING WITH DIARIZATION ---")
-audio_path = "/Workspace/Users/sshibu@pplweb.com/GPU_End_To_End_Code_Execution/audio_files/2025_01_02/RE03a92a17d15111d9acd689a079a754f5.mp3"
+audio_path = "RE03a92a17d15111d9acd689a079a754f5.mp3"
 
 # Define a diarization-specific prompt using the phi instruct prompt template
 diarization_prompt = (
@@ -90,15 +90,6 @@ response = processor.batch_decode(
 )[0]
 print(f'>>> Diarized Transcription Response\n{response}')
 
-
-# COMMAND ----------
-
-import os
-import soundfile as sf
-import torch
-from transformers import GenerationConfig
-import glob
-
 # Set up generation configuration
 generation_config = GenerationConfig.from_pretrained(model_path)
 
@@ -108,7 +99,7 @@ assistant_prompt = '<|assistant|>'
 prompt_suffix = '<|end|>'
 
 # Directory containing audio files
-audio_dir = "/Workspace/Users/sshibu@pplweb.com/GPU_End_To_End_Code_Execution/audio_files/2025_01_02/"
+audio_dir = "audio_files/"
 
 # Get top 5 audio files from the directory
 audio_files = glob.glob(os.path.join(audio_dir, "*.mp3"))[:5]
@@ -231,6 +222,4 @@ for audio_name, audio_results in results.items():
 
 print(f"\nAll results saved to {output_dir}")
 
-
-# COMMAND ----------
 
