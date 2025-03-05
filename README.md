@@ -1,9 +1,3 @@
-# STT_with_phi4_instruct_multimodal
-
-Below is an example README that explains the purpose, setup, and functionality of the notebook:
-
----
-
 # Audio Diarization with Phi-4 Multimodal Model
 
 This notebook demonstrates how to perform audio transcription with detailed speaker diarization using the [Microsoft Phi-4-multimodal-instruct](https://huggingface.co/microsoft/Phi-4-multimodal-instruct) model. The code processes audio files by generating transcriptions that include speaker labels (e.g., "Speaker 1:", "Speaker 2:") and timestamps, and it explores multiple prompt variations for diarization.
